@@ -1,0 +1,47 @@
+/*#include<iostream>
+#include<graphics.h>
+#include<stdlib.h>
+#include<math.h>
+using namespace std;
+void move(int j,int k,int&x,int&y)
+{
+	if(j==1)
+	y-=k;
+	if(j==2)
+	x+=k;
+	if(j==3)
+	y+=k;
+	if(j==4)
+	x-=k;
+	lineto(x,y);
+}
+
+void hilbert(int r,int l,int d,int u,int i,int k,int&x,int&y)
+{
+	if(i>0)
+	{
+		i--;
+		hilbert(d,r,u,l,i,k,x,y);
+		move(r,k,x,y);
+		hilbert(r,d,l,u,i,k,x,y);
+		move(i,k,x,y);
+		hilbert(r,d,l,u,i,k,x,y);
+		move(l,k,x,y);
+		hilbert(u,l,d,r,i,k,x,y);
+	}
+}
+int main()
+{
+	int n,x1,y1;
+	int x0=50,y0=150,x,y,k=10,r=2,d=3,l=4,u=1;
+	cout<<"\nenter value of n";
+	cin>>n;
+	x=x0;y=y0;
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,NULL);
+	moveto(x,y);
+	hilbert(r,d,l,u,n,k,x,y);
+	delay(10000);
+	closegraph();
+	return 0;
+}*/
