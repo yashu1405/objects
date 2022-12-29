@@ -1,0 +1,41 @@
+import java.util.*;
+class Main{
+	public static void main(String []args){
+		ArrayList <Integer>al=new ArrayList<Integer>(5);
+		int ch;
+		Scanner sc=new Scanner(System.in);
+		do{
+			System.out.println("\n1.Add object\n2.Add object at specific location\n3.Remove by value\n4.Check if the array is empty\n5.Exit");
+			ch=sc.nextInt();
+			switch(ch){
+				case 1:
+					int n;
+					System.out.println("Enter element to add");
+					n=sc.nextInt();
+					al.add(n);
+					break;
+				case 2:
+					int n1,i;
+					System.out.println("Enter element to add");
+					n1=sc.nextInt();
+					System.out.println("Enter index to add element");
+					i=sc.nextInt();
+					al.add(i,n1);
+					break;
+				case 3:
+					int in;
+					System.out.println("Enter index of an element to remove");
+					in=sc.nextInt();
+					al.remove(in);
+					break;
+				case 4:System.out.println("Is Empty : "+al.isEmpty());break;
+				case 5:break;
+				default:System.out.println("Enter valid choice");
+			}
+			System.out.print("ArrayList is : ");
+			for(int a=0;a<al.size();a++){
+				System.out.print(al.get(a)+" ");
+			}
+		}while(ch!=5);
+	}
+}
