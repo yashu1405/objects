@@ -1,0 +1,45 @@
+import java.util.*;
+interface OnlineCourse{
+	void getDetails();
+}
+class Python implements OnlineCourse{
+	public void getDetails(){
+		System.out.println("Language : Python");
+		System.out.println("Use : It is the language used for machine learning");
+		System.out.println("Course Fees : RS.7000");
+	}
+}
+class DataStructures implements OnlineCourse{
+	public void getDetails(){
+		System.out.println("Language : Data Structure");
+		System.out.println("Use : It is most important part of programming");
+		System.out.println("Course Fees : RS.8000");
+	}
+}
+class Java implements OnlineCourse{
+	public void getDetails(){
+		System.out.println("Language : Java");
+		System.out.println("Use : It is most used programming language");
+		System.out.println("Course Fees : RS.5500");
+	}
+}
+class FactoryLang{
+	public OnlineCourse getCourse(int n){
+		if(n==1)
+		return new Python();
+		else if(n==2)
+		return new DataStructures();
+		else
+		return new Java();
+	}
+}
+class Main{
+	public static void main(String []args){
+		Scanner sc=new Scanner(System.in);
+		FactoryLang fl=new FactoryLang();
+		System.out.println("\n1.Machine Learning\n2.Most Important\n3.Used Worldwide");
+		int n=sc.nextInt();
+		OnlineCourse oc=fl.getCourse(n);
+		oc.getDetails();
+	}
+}
