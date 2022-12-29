@@ -1,0 +1,55 @@
+/*Design a class ‘Complex ‘with data members for real and imaginary part. Provide default and Parameterized constructors.Write a
+program to perform arithmetic operations of two complex numbers.*/
+import java.util.*;
+class Complex{
+	int real,img;
+	Complex(){}
+	Complex(int r,int i){
+		real=r;
+		img=i;
+	}
+	public static void perform(Complex a,Complex b){
+		Complex add=new Complex();
+		Complex sub=new Complex();
+		Complex mul=new Complex();
+
+		add.real=a.real+b.real;
+		add.img=a.img+b.img;
+		System.out.print("\nAddition : ");
+		add.show();
+
+		sub.real=a.real-b.real;
+		sub.img=a.img-b.img;
+		System.out.print("\nSubtraction : ");
+		sub.show();
+
+		mul.real=a.real*b.real+a.img*b.img;
+		mul.img=a.real*b.img+a.img*b.real;
+		System.out.print("\nMultiplication : ");
+		mul.show();
+	}
+	public void show(){
+		if(this.img>0)
+		System.out.print(this.real+"+"+this.img+"i");
+		else
+		System.out.print(this.real+""+this.img+"i");
+	}
+	public static void main(String args[]){
+		int r,i;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter real and imaginary part for first complex number");
+		r=sc.nextInt();
+		i=sc.nextInt();
+		Complex a=new Complex(r,i);
+		System.out.println("Enter real and imaginary part for second complex number");
+		r=sc.nextInt();
+		i=sc.nextInt();
+		Complex b=new Complex(r,i);
+
+		System.out.print("\nfirst number : ");
+		a.show();
+		System.out.print("\nsecond number : ");
+		b.show();
+		perform(a,b);
+	}
+}
