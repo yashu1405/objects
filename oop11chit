@@ -1,0 +1,26 @@
+import java.util.*;
+class AuthenticationFailure extends Exception{
+	AuthenticationFailure(String str){
+		super(str);
+	}
+}
+class prac11{
+	public static void main(String []args){
+		int pass;
+		Scanner sc=new Scanner(System.in);
+		try{
+			System.out.println("Enter your password");
+			pass=sc.nextInt();
+			if(pass!=12354)
+			throw new AuthenticationFailure("Invalid password");
+			else
+			System.out.println("Successfully login");
+		}
+		catch(AuthenticationFailure e){
+			System.out.println(e);
+		}
+		catch(InputMismatchException e){
+			System.out.println("Invalid");
+		}
+	}
+}
