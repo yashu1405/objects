@@ -1,0 +1,90 @@
+/**
+Name:-Yash Sandip Yeola.
+Class:- SE-2			
+Batch:-D
+Roll No.:-69
+Experiment No:- 06
+Title:-Implement a program to handle Arithmetic exception, Array Index Out Of Bounds.
+The user enters two numbers Num1 and Num2. The division of Num1 and Num2 is displayed. If
+Num1 and Num2 were not integers, the program would throw a Number Format Exception. If
+Num2 were zero, the program would throw an Arithmetic Exception. Display the exception.
+*/
+
+class NestedTry
+{
+  
+    public static void main(String args[])
+    {
+        try {
+            	int arr[] = { 1, 2, 3, 4, 5 };
+		System.out.println(arr[5]);
+            try {
+			int x = arr[2] / 0;  // performe division by zero
+            }
+            catch (ArithmeticException e2) {
+                System.out.println("division by zero is not possible");
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e1) {
+            System.out.println("ArrayIndexOutOfBoundsException");
+            System.out.println("Element at such index does not exists");
+        }
+    }
+}
+
+/*
+Output:-
+ArrayIndexOutOfBoundsException
+Element at such index does not exists
+
+*/
+
+
+
+
+/**
+Name:-Yash Sandip Yeola.
+Class:-SE-2.
+Batch:-D.
+Roll No.:-69.
+Experiment No.:-06.
+Title:-Implement a program to handle Arithmetic exception, Array Index Out Of Bounds.
+The user enters two numbers Num1 and Num2. The division of Num1 and Num2 is displayed. If
+Num1 and Num2 were not integers, the program would throw a Number Format Exception. If
+Num2 were zero, the program would throw an Arithmetic Exception. Display the exception.
+*/
+import java.util.Scanner;
+
+class AgeException extends Exception {
+ 
+ public AgeException(String str) {
+  System.out.println(str);
+ }
+}
+public class AgeExceptionDemo {
+
+ public static void main(String[] args) {
+  Scanner s = new Scanner(System.in);
+  System.out.print("Please enter your age: ");
+  int age = s.nextInt();
+  
+  try {
+   if(age < 18) 
+    throw new AgeException("Invalid age");
+   else
+    System.out.println("Valid age");
+  }
+  catch (AgeException a) {
+   System.out.println(a);
+  }
+ }
+}
+
+/*
+Output:-
+Please enter your age: 17
+Invalid age
+AgeException
+
+*/
+
