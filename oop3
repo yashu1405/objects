@@ -1,0 +1,139 @@
+/**
+Name:-Yash Sandip Yeola.
+Class:-SE-2			
+Batch:-D
+Roll No.:-69
+Experiment No:-03
+Title:Design and develop inheritance for a given case study, identify objects and relationships and
+implement inheritance wherever applicable. Employee class with Emp_name, Emp_id, Address,
+Mail_id, and Mobile_no as members. Inherit the classes, Programmer, Team Lead, Assistant
+Project Manager and Project Manager from employee class. Add Basic Pay (BP) as the member
+of all the inherited classes with 97% of BP as DA, 10 % of BP as HRA, 12% of BP as PF, 0.1%
+of BP for staff club fund. Generate pay slips for the employees with their gross and net salary.
+
+*/
+
+class Employee
+{
+    String name,add,mail;
+    float id,mobile,basic;
+    void salary()
+    {
+        float da,hra,pf,cf,gross;
+        da = basic*97/100;
+        hra = basic * 10/100;
+        pf = basic *12/100;
+        cf = basic*0.1f/100;
+        gross = basic+da+hra-pf-cf;
+        System.out.println("Name:"+name);
+        System.out.println("Basic salary:"+basic);
+        System.out.println("Gross Salary:"+gross);
+        System.out.println("mailid :"+mail);
+        System.out.println("\n");
+    }
+}
+
+class Programmer extends Employee
+{
+    Programmer(String name,int sal,String mail)
+    {
+        System.out.println("Programmer Salary Details:");
+        this.name = name;
+        this.mail = mail;
+        basic = sal;
+    }
+    
+}
+
+class TeamLead extends Employee
+{
+    TeamLead(String name,int sal,String mail)
+    {
+        System.out.println("Team Leader Salary Details:");
+        this.name = name;
+        this.mail = mail;
+        basic = sal;
+    }
+    
+}
+class APM extends Employee
+{
+    APM(String name,int sal,String mail)
+    {
+        System.out.println("Assistant Project Manager Salary Details:");
+        this.name = name;
+        this.mail = mail;
+        basic = sal;
+    }
+}
+
+class ProjectManager extends Employee
+{
+    ProjectManager(String name,int sal,String mail)
+    {
+        System.out.println("Project Manager Salary Details:");
+        this.name = name;
+        this.mail = mail;
+        basic = sal;
+    }
+    
+}
+
+public class Inheritance
+{
+    public static void main(String[] args)
+    {
+        Programmer P = new Programmer("A.J.Jadhav",50000,"ajjadhav@gmail.com");
+        P.salary();
+        
+        TeamLead t = new TeamLead("Kunal Patil",60000,"kppatil@gmail.com");
+        t.salary();
+        
+        APM A = new APM("Mangesh Kale",70000,"mangeshkale778@gmail.com");
+        A.salary();
+        
+        ProjectManager PM = new ProjectManager("Suyash Karpe",50000,"suyashk@gmail.com");
+        PM.salary();
+        
+    }
+}
+
+/*
+OUTPUT
+
+Programmer Salary Details:
+
+
+Name:A.J.Jadhav 
+Basic salary:50000.0
+Gross Salary:97450.0
+mailid :ajjadhav@gmail.com
+
+
+Team Leader Salary Details:
+
+
+Name:Kunal Patil
+Basic salary:60000.0
+Gross Salary:116940.0
+mailid :kppatil@gmail.com
+
+
+Assistant Project Manager Salary Details:
+
+
+Name:Mangesh Kale
+Basic salary:70000.0
+Gross Salary:136430.0
+mailid :mangeshkale778@gmail.com
+
+
+Project Manager Salary Details:
+
+
+Name:Suyash Karpe
+Basic salary:50000.0
+Gross Salary:97450.0
+mailid :suyashk@gmail.com
+
+
