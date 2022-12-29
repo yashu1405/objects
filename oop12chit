@@ -1,0 +1,29 @@
+import java.util.*;
+
+class AgeExceptionFailure extends Exception{
+	AgeExceptionFailure(String str){
+		super(str);
+	}
+}
+
+class prac12{
+	public static void main(String []args){
+		Scanner sc=new Scanner(System.in);
+		int age;
+
+		try{
+			System.out.println("Enter your age ");
+			age=sc.nextInt();
+			if(age<18)
+			throw new AgeExceptionFailure("Candidate is not eligible for voting");
+			else
+			System.out.println("Candidate is eligible for voting");
+		}
+		catch(AgeExceptionFailure e){
+			System.out.println(e);
+		}
+		catch(InputMismatchException e){
+			System.out.println("Invalid input");
+		}
+	}
+}
