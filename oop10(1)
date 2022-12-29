@@ -1,0 +1,48 @@
+interface Currency {
+       String getSymbol();
+}
+
+class Rupee implements Currency {
+       @Override
+       public String getSymbol() {
+              return "Rs";
+       }
+}
+
+
+class SGDDollar implements Currency {
+       @Override
+       public String getSymbol() {
+              return "SGD";
+       }
+}
+
+
+class USDollar implements Currency {
+       @Override
+       public String getSymbol() {
+              return "USD";
+       }
+}
+class CurrencyFactory {
+
+       public static Currency createCurrency (String country) {
+       if (country. equalsIgnoreCase ("India")){
+              return new Rupee();
+       }else if(country. equalsIgnoreCase ("Singapore")){
+              return new SGDDollar();
+       }else if(country. equalsIgnoreCase ("US")){
+              return new USDollar();
+        }
+       throw new IllegalArgumentException("No such currency");
+       }
+}
+
+
+class Main {
+       public static void main(String args[]) {
+              String country = ("India");
+              Currency rupee = CurrencyFactory.createCurrency(country);
+              System.out.println(rupee.getSymbol());
+       }
+}
