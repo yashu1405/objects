@@ -1,0 +1,30 @@
+class Employee{
+	int empID;
+	String name;
+	double salary,experience;
+	void getDetails(){
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter Name");
+			name=sc.nextLine();
+			System.out.println("Enter empID ");
+			empID=sc.nextInt();
+			System.out.println("Enter Salary");
+			salary=sc.nextDouble();
+			System.out.println("Enter your experience");
+			experience=sc.nextDouble();
+	}
+	void printDetails(){
+			System.out.println("Name : "+name+"\nEmpID :"+empID+"\nSalary :"+salary+"\nExperience :"+experience);
+	}
+}
+class Main{
+	public static void main(String []args){
+		Employee []emp=new Employee[3];
+		for(int i=0;i<emp.length;i++){
+			emp[i]=new Employee();
+			emp[i].getDetails();
+		}
+		for(int i=0;i<emp.length;i++)
+			emp[i].printDetails();
+	}
+}
