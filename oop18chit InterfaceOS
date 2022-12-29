@@ -1,0 +1,39 @@
+interface OS{
+	void spec();
+}
+
+class Android implements OS{
+	public void spec(){
+		System.out.println("Android");
+	}
+}
+
+class iOS implements OS{
+	public void spec(){
+			System.out.println("iOS");
+	}
+}
+
+class BlackBerry implements OS{
+	public void spec(){
+			System.out.println("BlackBerry");
+	}
+}
+class Factoryos{
+	public OS getos(String str){
+		if(str=="most used")
+		return new Android();
+		else if(str=="most costly")
+		return new iOS();
+		else
+		return new BlackBerry();
+	}
+}
+class Main{
+	public static void main(String []args){
+		Factoryos fi=new Factoryos();
+		OS s=fi.getos("most costly");
+		s.spec();
+
+	}
+}
